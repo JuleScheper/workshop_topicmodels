@@ -61,9 +61,9 @@ modelfit = stm(documents = impf_stm$documents,
 * Im vorliegenden Fall haben wir einen kleinen bis mittleren Korpus (ca. 13k Dokumente, die größtenteils recht kurz sind). Wir können von einer mittleren inhaltlichen Varianz ausgehen. Einerseits haben wir Posts bewusst danach ausgewählt, dass sie sich mit dem Thema Impfen beschäftigen, was die Varianz einschränkt. Andererseits wissen wir, dass in Online-Foren die verschiedensten Perspektiven auf dieses Thema vorkommen können, was für Varianz sorgt.
 * Wir gehen im Folgenden in mehreren Schritten vor:
   1) Um eine allgemeine Orientierung zu erhalten, in welcher Range Modelle zu finden sind, die gut zu den Daten passen, schätzen wir 10 Modelle von $k = 10$ bis $k = 100$ mit einem Abstand von jeweils 10 Topics. Diese Modelle vergleichen wir anhand von einigen statistischen Maßen, um die Zahl der Kandidatenmodelle einzuschränken.
-  1) Wir interpretieren die besten Modelle substantiell und entscheiden, welche Topic-Anzahl für das Forschungsinteresse hilfreicher scheint.
-  1) Wir schätzen weitere Modelle basierend auf den Ergebnissen aus 2) mit kleineren Abständen zwischen den $k$. Wir prüfen, wie sich die Topics verändern. Zudem achten wir darauf, ob bei Modellen mit größeren $k$ interessante Topics hinzukommen oder ob sich mehr Ambivalenzen zeigen.
-  1) Wir entscheiden uns für ein Modell.
+  2) Wir interpretieren die besten Modelle substantiell und entscheiden, welche Topic-Anzahl für das Forschungsinteresse hilfreicher scheint.
+  3) Wir schätzen weitere Modelle basierend auf den Ergebnissen aus 2) mit kleineren Abständen zwischen den $k$. Wir prüfen, wie sich die Topics verändern. Zudem achten wir darauf, ob bei Modellen mit größeren $k$ interessante Topics hinzukommen oder ob sich mehr Ambivalenzen zeigen.
+  4) Wir entscheiden uns für ein Modell.
   
 * Da das Schätzen der Modelle recht lange dauert, parallelisieren wir die Berechnung. Dazu nutze ich das Paket `furrr`. Es sei an dieser Stelle darauf hingewiesen, dass das Paket vor allem unter Windows mit RStudio für Probleme sorgen kann. Es ist daher empfehlenswert, das Skript zum Schätzen und Speichern der Modelle in der Konsole oder im Terminal auszuführen. Noch schneller geht es für diesen Workshop, die bereits geschätzten Modelle aus dem LMS zu laden.
 
